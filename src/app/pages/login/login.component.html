@@ -1,3 +1,47 @@
-<div>
-    Este es el login de la aplicación con Angular 8.
+<div class="container divcenter">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 [class.titleLogin]="this.titleLogin">{{this.title}}</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" [(ngModel)]="this.usuario" (keyup)="this.validateEmail($event)" class="form-control" id="email">
+            </div>
+            <h3>{{this.usuario}}</h3>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" [(ngModel)]="this.password" class="form-control" id="password">
+            </div>
+            <div class="mb-3 validation" *ngIf="this.validatePass">
+                La contraseña debe tener al menos 6 caracteres
+            </div>
+            <!-- <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div> -->
+            <button type="submit" (click)="this.sendLogin()" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li *ngFor="let field of this.arrayCars">{{field}}</li>
+            </ul>
+        </div>
+    </div>
 </div>
+<div>Moneda: {{this.dataCurrency | currency: 'EUR'}}</div>
+<div>Fecha: {{this.dataDate | date: 'dd-MM-yyyy'}}</div>
+<div>Decimal: {{this.dataDecimal | number: '3.1-2'}}</div>
+<div>JSON: {{this.dataJson | json}}</div>
+<div>Textos: {{this.dataString | uppercase}} {{this.dataString | lowercase}}</div>
+<div>Reverse: {{this.dataString | reversed}}</div>
+<div>Percent: {{this.dataPercent | percent: '2.1-2'}}</div>
+<div>Slice: {{this.dataSlice | slice:1:3}}</div>
+
+
+
+<br><br><br>
