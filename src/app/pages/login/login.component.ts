@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PruebaService } from 'src/app/services/prueba.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -28,8 +30,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     public dataPercent: number = 456;
     public dataSlice: Array<number> = [1, 2, 3, 4, 5, 6];
 
+    public entorno: string = environment.API_KEY;
+
     constructor(
-        private pruebaService: PruebaService
+        private pruebaService: PruebaService,
+        private router: Router,
     ){
         this.title = 'Este es nuestro login';
         this.titleLogin = true;
@@ -65,7 +70,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     public getUsersService():void{
-        console.log('Usuarios: ' + JSON.stringify(this.pruebaService.getUsers()));
+        //console.log('Usuarios: ' + JSON.stringify(this.pruebaService.getUsers()));
+    }
+
+    public goToContact(): void {
+        this.router.navigate(['/contact']);
     }
 
 }

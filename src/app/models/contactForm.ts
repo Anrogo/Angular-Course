@@ -3,5 +3,5 @@ export class ContactForm{
     public email!: string;
     public phone!: number;
     public message!: string;
-
+    
 }

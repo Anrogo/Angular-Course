@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 col-sm-6 col-md-3 mb-2" *ngFor="let item of this.arrayDatosPhotos">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top cardImage" src="{{item.thumbnailUrl}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <a class="btn btn-primary" (click)="this.goToViewDetail(item.id)">Ver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HomeService } from 'src/app/services/home.service';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: 'home.component.html',
-    styleUrls: ['./home.component.css'],
+    selector: 'app-news',
+    templateUrl: 'news.component.html',
+    styleUrls: ['./news.component.css'],
     providers: [HomeService]
 })
 
-export class HomeComponent implements OnInit {
-
+export class NewsComponent implements OnInit {
     public arrayDatosPhotos: Array<any>;
 
     constructor(
         private _homeService: HomeService,
+        private router : Router
     ) { 
         this.arrayDatosPhotos = [];
     }
@@ -30,5 +31,7 @@ export class HomeComponent implements OnInit {
         )
     }
 
-    
+    public goToViewDetail(id: number): void {
+        this.router.navigate(['/home/detailnews/', id]);
+    }
 }

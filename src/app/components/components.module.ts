@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { CardModule } from './card/card.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        CardModule
+        CardModule,
+        NavbarModule
     ],
     exports: [
-        CardModule
+        CardModule,
+        NavbarModule
     ],
     declarations: [],
     providers: [],
