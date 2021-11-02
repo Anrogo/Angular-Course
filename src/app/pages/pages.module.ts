@@ -4,6 +4,7 @@ import { HomeModule } from './home/home.module';
 import {LoginModule} from './login/login.module';
 import { DetailNewsModule } from './news/detailnews/detailnews.module';
 import { NewsModule } from './news/news.module';
+import { UsersModule } from './users/users.module';
 @NgModule({
     declarations: [],
     imports: [
@@ -11,14 +12,16 @@ import { NewsModule } from './news/news.module';
         HomeModule,
         ContactModule,
         NewsModule,
-        DetailNewsModule
+        DetailNewsModule,
+        UsersModule,
     ],
     exports: [
         LoginModule,
         HomeModule,
         ContactModule,
         NewsModule,
-        DetailNewsModule
+        DetailNewsModule,
+        UsersModule
     ],
     providers: []
 })

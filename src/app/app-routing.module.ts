@@ -5,6 +5,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DetailNewsComponent } from './pages/news/detailnews/detailnews.component';
 import { NewsComponent } from './pages/news/news.component';
+import { UserDeleteComponent } from './pages/users/user-delete/user-delete.component';
+import { UserDetailsComponent } from './pages/users/user-details/user-details.component';
+import { UserEditComponent } from './pages/users/user-edit/user-edit.component';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
   {
@@ -37,7 +41,24 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent
+  },
+  {
+    path: 'users',
+    component: UsersComponent
+  },
+  {
+    path: 'user-details/:id',
+    component: UserDetailsComponent
+  },
+  {
+    path: 'user-edit/:id',
+    component: UserEditComponent
+  },
+  {
+    path: 'user-delete/:id',
+    component: UserDeleteComponent
   }
+  
 ];
 
 @NgModule({

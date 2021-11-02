@@ -33,4 +33,9 @@ export class HomeService {
         let url = AppEndPoints.ENDPOINTEJEMPLO;
         return this._http.get(url);
     }
+
+    public getDataUsers(): Observable<any>{
+        let url = AppEndPoints.USERS;
+        return this._http.get(url);
+    }
 }
